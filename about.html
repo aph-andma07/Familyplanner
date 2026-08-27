@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Family Planner</title>
+    <style>
+      :root { --bg-1: #0f172a; --bg-2: #1d4ed8; --accent: #67e8f9; --accent-2: #c084fc; --text: #e2e8f0; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 88px 24px 32px; font-family: Arial, Helvetica, sans-serif; background: linear-gradient(135deg, var(--bg-1), var(--bg-2)); color: var(--text); }
+      body::before, body::after { content: ""; position: fixed; width: 420px; height: 420px; border-radius: 50%; filter: blur(80px); opacity: 0.5; pointer-events: none; }
+      body::before { background: rgba(103, 232, 249, 0.5); top: 10%; left: 10%; }
+      body::after { background: rgba(192, 132, 252, 0.5); right: 10%; bottom: 12%; }
+      .site-nav { position: fixed; top: 24px; right: 28px; z-index: 2; display: flex; gap: 8px; }
+      .nav-link { color: var(--text); text-decoration: none; padding: 8px 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; background: rgba(15,23,42,.28); font-size: .9rem; }
+      .nav-link:hover, .nav-link[aria-current="page"] { background: rgba(103,232,249,.16); }
+      main { position: relative; z-index: 1; width: min(720px, 100%); padding: 48px 54px; border-radius: 24px; background: rgba(15,23,42,.35); border: 1px solid rgba(255,255,255,.16); box-shadow: 0 20px 60px rgba(15,23,42,.5); backdrop-filter: blur(12px); }
+      .badge { display: inline-block; padding: 8px 16px; margin-bottom: 20px; border-radius: 999px; background: rgba(103,232,249,.12); border: 1px solid rgba(103,232,249,.3); color: #dff9ff; letter-spacing: 1.5px; font-size: 12px; text-transform: uppercase; }
+      h1 { margin: 0; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; letter-spacing: -.06em; background: linear-gradient(90deg, #fff, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      p { margin: 20px 0 0; max-width: 56ch; font-size: 1.05rem; line-height: 1.7; color: rgba(226,232,240,.82); }
+      @media (max-width: 560px) { .site-nav { left: 24px; right: 24px; justify-content: center; } main { padding: 36px 28px; } }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html" aria-current="page">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+    <main>
+      <div class="badge">Our approach</div>
+      <h1>More room for what matters.</h1>
+      <p>Family Planner brings calendars, errands, and everyday decisions into one shared space. We are building a simpler way for families to stay in sync without adding more noise to the week.</p>
+      <p>It is thoughtful planning for real life: flexible enough for busy days, clear enough for everyone to use.</p>
+    </main>
+  </body>
+</html>

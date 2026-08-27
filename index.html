@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
+    <title>Family Planner</title>
     <style>
       :root {
         --bg-1: #0f172a;
@@ -50,6 +50,32 @@
         background: rgba(192, 132, 252, 0.5);
         right: 10%;
         bottom: 12%;
+      }
+
+      .site-nav {
+        position: fixed;
+        top: 24px;
+        right: 28px;
+        z-index: 2;
+        display: flex;
+        gap: 8px;
+      }
+
+      .nav-link {
+        color: var(--text);
+        text-decoration: none;
+        padding: 8px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.28);
+        font-size: 0.9rem;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link[aria-current="page"] {
+        background: rgba(103, 232, 249, 0.16);
+        transform: translateY(-1px);
       }
 
       .card {
@@ -129,14 +155,20 @@
     </style>
   </head>
   <body>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html" aria-current="page">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+
     <div class="card">
-      <div class="badge">Welcome</div>
-      <h1>Hello World</h1>
-      <p>Creating something beautiful, one line at a time.</p>
+      <div class="badge">Family Planner</div>
+      <h1>Plan life together.</h1>
+      <p>Creating a calmer week, one shared plan at a time.</p>
 
       <div class="button-row">
-        <a class="button primary" href="#">Start Now</a>
-        <a class="button secondary" href="#">Learn More</a>
+        <a class="button primary" href="contact.html">Get in touch</a>
+        <a class="button secondary" href="about.html">Learn more</a>
       </div>
     </div>
   </body>
