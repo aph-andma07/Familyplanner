@@ -18,6 +18,9 @@
       h1 { margin: 0; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; letter-spacing: -.06em; background: linear-gradient(90deg, #fff, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
       p { margin: 20px 0 0; max-width: 56ch; font-size: 1.05rem; line-height: 1.7; color: rgba(226,232,240,.82); }
       a.email { color: var(--accent); }
+      .page-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+      .page-link { color: #082f49; text-decoration: none; padding: 11px 18px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), #7dd3fc); font-weight: 700; }
+      .page-link.secondary { color: var(--text); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); }
       @media (max-width: 560px) { .site-nav { left: 24px; right: 24px; justify-content: center; } main { padding: 36px 28px; } }
     </style>
   </head>
@@ -32,6 +35,10 @@
       <h1>Let’s plan better.</h1>
       <p>Have a question, an idea, or a family workflow you would like to share? We would love to hear from you.</p>
       <p>Write to <a class="email" href="mailto:hello@familyplanner.example">hello@familyplanner.example</a> and we will get back to you soon.</p>
+      <div class="page-links">
+        <a class="page-link" href="about.html">About us</a>
+        <a class="page-link secondary" href="index.html">Back home</a>
+      </div>
     </main>
   </body>
 </html>

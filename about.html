@@ -18,6 +18,9 @@
       .badge { display: inline-block; padding: 8px 16px; margin-bottom: 20px; border-radius: 999px; background: rgba(103,232,249,.12); border: 1px solid rgba(103,232,249,.3); color: #dff9ff; letter-spacing: 1.5px; font-size: 12px; text-transform: uppercase; }
       h1 { margin: 0; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; letter-spacing: -.06em; background: linear-gradient(90deg, #fff, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
       p { margin: 20px 0 0; max-width: 56ch; font-size: 1.05rem; line-height: 1.7; color: rgba(226,232,240,.82); }
+      .page-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+      .page-link { color: #082f49; text-decoration: none; padding: 11px 18px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), #7dd3fc); font-weight: 700; }
+      .page-link.secondary { color: var(--text); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); }
       @media (max-width: 560px) { .site-nav { left: 24px; right: 24px; justify-content: center; } main { padding: 36px 28px; } }
     </style>
   </head>
@@ -32,6 +35,10 @@
       <h1>More room for what matters.</h1>
       <p>Family Planner brings calendars, errands, and everyday decisions into one shared space. We are building a simpler way for families to stay in sync without adding more noise to the week.</p>
       <p>It is thoughtful planning for real life: flexible enough for busy days, clear enough for everyone to use.</p>
+      <div class="page-links">
+        <a class="page-link" href="contact.html">Contact us</a>
+        <a class="page-link secondary" href="index.html">Back home</a>
+      </div>
     </main>
   </body>
 </html>
