@@ -1,0 +1,31 @@
+PROGRESS - FAMILY PLANNER
+==========================
+
+Senast uppdaterad: 2026-08-28
+
+GENOMFORT
+---------
+[x] Skapa startsida (index.html)
+[x] Skapa about-sida (about.html)
+[x] Skapa calendar-sida (calendar.html)
+[x] Skapa contact-sida (contact.html)
+[x] Skapa gallery-sida (gallary.html)
+[x] Skapa beslutslogg (decisions.txt)
+
+PAGAR
+-----
+[ ] Inget just nu
+
+KOMMANDE
+--------
+[ ] Fyll pa gallery-sidan med bilder
+[ ] Bestamma vilka funktioner Family Planner ska ha
+
+UPPDATERINGAR
+-------------
+2026-08-28: Grundsidornas struktur och beslutsloggen ar skapade.
+
+
+MALL FOR NY UPPDATERING
+-----------------------
+YYYY-MM-DD: Beskriv vad som gjordes, vad som pagar eller vad som ar nasta steg.
