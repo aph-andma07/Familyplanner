@@ -1,0 +1,16 @@
+BESLUTSLOGG - FAMILY PLANNER
+============================
+
+Alla beslut samlade på ett ställe.
+
+| Nr | Datum      | Beslut                         | Genomförande       | Anledning                         | Ansvarig | Status     |
+|----|------------|--------------------------------|--------------------|-----------------------------------|----------|------------|
+| 1  | 2026-08-28 | Skapa en gallery-sida           | gallary.html        | Samla familjens bilder            |          | Genomfört  |
+
+
+MALL FÖR NYA BESLUT
+-------------------
+Kopiera raden nedan och fyll i nästa beslut.
+
+| 2  | YYYY-MM-DD |                                |                    |                                   |          | Planerat   |
+
