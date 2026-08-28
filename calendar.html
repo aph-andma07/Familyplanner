@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar | Family Planner</title>
+    <style>
+      :root {
+        --ink: #17324d;
+        --muted: #687b8b;
+        --paper: #f7f4ed;
+        --card: rgba(255, 255, 255, 0.7);
+        --coral: #e87961;
+        --mint: #b9d8c2;
+        --line: rgba(23, 50, 77, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 30px 5vw 64px;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        background: var(--paper);
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.35;
+        background-image: radial-gradient(rgba(23, 50, 77, 0.13) 0.7px, transparent 0.7px);
+        background-size: 16px 16px;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .brand { color: var(--ink); font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+      .site-nav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+      .nav-link {
+        color: var(--ink);
+        padding: 8px 12px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.82rem;
+        text-decoration: none;
+      }
+      .nav-link:hover, .nav-link[aria-current="page"] { border-color: var(--line); background: rgba(255,255,255,.55); }
+
+      main { max-width: 1180px; margin: 76px auto 0; }
+      .heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 42px; }
+      .eyebrow { margin: 0 0 14px; color: var(--coral); font: 700 .75rem/1 Arial, Helvetica, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+      h1 { margin: 0; font-size: clamp(3.2rem, 8vw, 7rem); font-weight: 400; line-height: .9; letter-spacing: -.055em; }
+      .year-note { max-width: 190px; margin: 0 0 4px; color: var(--muted); font: .9rem/1.5 Arial, Helvetica, sans-serif; }
+
+      .year-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+      .month { padding: 19px; border: 1px solid var(--line); border-radius: 4px; background: var(--card); box-shadow: 0 10px 24px rgba(23,50,77,.05); }
+      .month h2 { margin: 0 0 16px; font-size: 1.35rem; font-weight: 400; }
+      .week, .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+      .week { margin-bottom: 8px; color: var(--muted); font: 700 .62rem/1 Arial, Helvetica, sans-serif; text-align: center; text-transform: uppercase; }
+      .day { min-height: 27px; padding: 5px 2px; border-radius: 3px; font: .78rem/1 Arial, Helvetica, sans-serif; text-align: center; }
+      .day:not(.empty):hover { background: var(--mint); }
+      .day.today { color: #fff; background: var(--coral); font-weight: 700; }
+
+      @media (max-width: 900px) { .year-grid { grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 650px) {
+        body { padding: 22px 22px 48px; }
+        .site-header { align-items: flex-start; flex-direction: column; }
+        .site-nav { justify-content: flex-start; }
+        main { margin-top: 62px; }
+        .heading { align-items: flex-start; flex-direction: column; margin-bottom: 30px; }
+        .year-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .month { padding: 14px 9px; }
+      }
+      @media (max-width: 390px) { .year-grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Family Planner</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="gallary.html">Gallery</a>
+        <a class="nav-link" href="calendar.html" aria-current="page">Calendar</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="heading">
+        <div>
+          <p class="eyebrow">The year ahead</p>
+          <h1>2026</h1>
+        </div>
+        <p class="year-note">A full year for plans, celebrations, and the ordinary days worth remembering.</p>
+      </div>
+      <section class="year-grid" id="year-calendar" aria-label="2026 year calendar"></section>
+    </main>
+
+    <script>
+      const year = 2026;
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const calendar = document.querySelector("#year-calendar");
+      const today = new Date();
+
+      monthNames.forEach((monthName, monthIndex) => {
+        const month = document.createElement("article");
+        month.className = "month";
+        month.innerHTML = `<h2>${monthName}</h2><div class="week">${dayNames.map((day) => `<span>${day}</span>`).join("")}</div><div class="days"></div>`;
+        const days = month.querySelector(".days");
+        const firstDay = new Date(year, monthIndex, 1).getDay();
+        const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+        for (let slot = 0; slot < firstDay; slot += 1) {
+          days.insertAdjacentHTML("beforeend", '<span class="day empty" aria-hidden="true"></span>');
+        }
+        for (let day = 1; day <= daysInMonth; day += 1) {
+          const isToday = today.getFullYear() === year && today.getMonth() === monthIndex && today.getDate() === day;
+          days.insertAdjacentHTML("beforeend", `<span class="day${isToday ? " today" : ""}">${day}</span>`);
+        }
+        calendar.appendChild(month);
+      });
+    </script>
+  </body>
+</html>
