@@ -6,11 +6,14 @@ Alla beslut samlade på ett ställe.
 | Nr | Datum      | Beslut                         | Genomförande       | Anledning                         | Ansvarig | Status     |
 |----|------------|--------------------------------|--------------------|-----------------------------------|----------|------------|
 | 1  | 2026-08-28 | Skapa en gallery-sida           | gallary.html        | Samla familjens bilder            |          | Genomfört  |
+| 2  | 2026-09-10 | Skapa aktivitetslista           | activities.html     | Samla familjens aktiviteter       |          | Genomfört  |
+| 3  | 2026-09-10 | Administrera personer och roller | admin.html        | Styra sidåtkomst                  |          | Genomfört  |
+| 4  | 2026-09-10 | Använda kalenderns gränssnitt   | Alla HTML-sidor     | Skapa en enhetlig upplevelse      |          | Genomfört  |
 
 
 MALL FÖR NYA BESLUT
 -------------------
 Kopiera raden nedan och fyll i nästa beslut.
 
-| 2  | YYYY-MM-DD |                                |                    |                                   |          | Planerat   |
+| 5  | YYYY-MM-DD |                                |                    |                                   |          | Planerat   |
 

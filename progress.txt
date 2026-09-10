@@ -1,7 +1,7 @@
 PROGRESS - FAMILY PLANNER
 ==========================
 
-Senast uppdaterad: 2026-08-28
+Senast uppdaterad: 2026-09-10
 
 GENOMFORT
 ---------
@@ -11,6 +11,9 @@ GENOMFORT
 [x] Skapa contact-sida (contact.html)
 [x] Skapa gallery-sida (gallary.html)
 [x] Skapa beslutslogg (decisions.txt)
+[x] Skapa aktivitetslista (activities.html)
+[x] Skapa administration av personer, roller och sidåtkomst (admin.html)
+[x] Standardisera alla sidor efter kalenderns gränssnitt
 
 PAGAR
 -----
@@ -24,6 +27,7 @@ KOMMANDE
 UPPDATERINGAR
 -------------
 2026-08-28: Grundsidornas struktur och beslutsloggen ar skapade.
+2026-09-10: Aktivitetslista och administrationssida ar skapade. Alla sidor anvander nu kalenderns font, farger, bakgrund, navigation och responsiva layout.
 
 
 MALL FOR NY UPPDATERING
